@@ -3,13 +3,12 @@ import { NextRequest } from "next/server";
 import { auth } from "@/lib/auth";
 import { headers } from "next/headers";
 
-const authPages = ["/signin"];
+const authPages = ["/signin", "/signup"];
 const protectedPages = ["/", "/signout"];
 
 function isInPages(request: NextRequest, pages: string[]): boolean {
   return pages.reduce(
-    (accumulator, page) =>
-      accumulator || request.nextUrl.pathname === page,
+    (accumulator, page) => accumulator || request.nextUrl.pathname === page,
     false,
   );
 }

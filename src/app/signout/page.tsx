@@ -2,6 +2,7 @@
 
 import { authClient } from "@/lib/auth-client";
 import { useRouter } from "next/navigation";
+import { Button } from "@/components/ui/button";
 
 export default function SignOut() {
   const router = useRouter();
@@ -16,5 +17,9 @@ export default function SignOut() {
     });
   }
 
-  return <button onClick={handleClick}>Sign Out</button>;
+  return (
+    <div className="flex min-h-screen items-center justify-center">
+      <Button onClick={handleClick}>Sign Out</Button>
+    </div>
+  );
 }

@@ -2,8 +2,9 @@ import { betterAuth } from "better-auth";
 import { prismaAdapter } from "better-auth/adapters/prisma";
 import { prisma } from "@/lib/prisma";
 import { Resend } from "resend";
+import VerificationEmail from "@/emails/verification";
 
-// const resend = new Resend()
+const resend = new Resend(process.env.RESEND_API_KEY);
 
 export const auth = betterAuth({
   database: prismaAdapter(prisma, { provider: "postgresql" }),
@@ -11,16 +12,18 @@ export const auth = betterAuth({
     enabled: true,
     requireEmailVerification: true,
   },
-  // emailVerification: {
-  //   sendVerificationEmail: async ({ user, url }) => {
-  //     await sendEmail({
-  //       to: user.email,
-  //       subject: "Verify your email address",
-  //       text: `Click the link to verify your email: ${url}`,
-  //     });
-  //   },
-  //   sendOnSignUp: true,
-  // },
+  emailVerification: {
+    sendOnSignUp: true,
+    autoSignInAfterVerification: true,
+    sendVerificationEmail: async ({ user, url, token }, request) => {
+      resend.emails.send({
+        from: process.env.EMAIL_FROM!,
+        to: [user.email],
+        subject: "Verify Your Email Address",
+        react: VerificationEmail({ url }),
+      });
+    },
+  },
   socialProviders: {
     github: {
       clientId: process.env.GITHUB_CLIENT_ID as string,

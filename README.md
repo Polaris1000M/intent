@@ -13,5 +13,9 @@ Track habits and their analytics.
 - [x] Style with shadcn/ui
 - [ ] E2E tests with Playwright
 
+### Application
+
+### Polishing
+
 ## Issues
 - [ ] Currently using a Google Group with support email not having @intent.ac domain

@@ -25,7 +25,7 @@ export default function RootLayout({
       lang="en"
       className={cn("font-sans", inter.variable, merriweather.variable)}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-dvh flex flex-col">{children}</body>
     </html>
   );
 }

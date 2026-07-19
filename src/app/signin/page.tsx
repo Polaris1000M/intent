@@ -61,7 +61,7 @@ export default function SignIn() {
   }
 
   return (
-    <div className="flex flex-col min-h-screen items-center justify-center px-8 py-4">
+    <div className="flex flex-col min-h-dvh items-center justify-center px-8 py-4">
       <form
         onSubmit={handleSubmit}
         className="flex flex-col gap-4 w-full max-w-sm"

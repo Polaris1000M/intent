@@ -1,4 +1,3 @@
-// src/lib/error-utils.ts
 import type { ErrorContext } from "better-auth/react";
 
 export function getAuthErrorMessage(ctx: unknown): string {

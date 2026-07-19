@@ -69,7 +69,7 @@ export default function SignUp() {
         className="flex flex-col gap-4 w-full max-w-sm"
       >
         <h1>Sign Up</h1>
-        <p className="text-sm text-muted-foreground">Welcome to Intent!</p>
+        <p className="text-sm text-muted-foreground">Sign up for Intent.</p>
         <Input name="email" type="text" placeholder="Email" />
         <Input name="username" type="text" placeholder="Username" />
         <Input name="password" type="password" placeholder="Password" />

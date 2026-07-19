@@ -10,7 +10,7 @@ Track habits and their analytics.
 - [x] Verify emails
 - [x] Initial deployment on Vercel
 - [x] Sync users across multiple login methods
-- [ ] Style with shadcn/ui
+- [x] Style with shadcn/ui
 - [ ] E2E tests with Playwright
 
 ## Issues

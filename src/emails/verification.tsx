@@ -9,7 +9,9 @@ export default function VerificationEmail({ url }: VerificationEmailProps) {
     <Html>
       <Head />
       <Body>
-        <Button href={url}>Verify</Button>
+        Thanks for signing up for Intent. Click{" "}
+        <Button href={url}>this link</Button> to verify your email address. If
+        you didn't create an account, you can safely ignore this email.
       </Body>
     </Html>
   );

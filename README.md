@@ -14,8 +14,16 @@ Track habits and their analytics.
 - [ ] E2E tests with Playwright
 
 ### Application
+- [ ] Add new sessions
+- [ ] Add long term goals
+- [ ] Add new habits
+    - [ ] Track current sessions
+- [ ] Add habit analytics
+    - [ ] Habit board
+    - [ ] Habit chart
 
 ### Polishing
-
-## Issues
-- [ ] Currently using a Google Group with support email not having @intent.ac domain
+- [ ] Style emails
+- [ ] Configure account linking
+- [ ] Change Google OAuth user support email to contact@intent.ac
+- [ ] Add fancy landing page

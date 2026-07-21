@@ -50,6 +50,34 @@ export async function mockSignUpError(
   );
 }
 
+export async function mockSignUpSuccessDelayed(page: Page, delayMs: number) {
+  await page.route("/api/auth/sign-up/email", async (route) => {
+    await new Promise((resolve) => setTimeout(resolve, delayMs));
+    await route.fulfill({
+      status: 200,
+      contentType: "application/json",
+      body: JSON.stringify({
+        token: null,
+        user: {
+          name: "testuser",
+          email: "test@example.com",
+          emailVerified: false,
+          image: null,
+          createdAt: "2025-01-01T00:00:00.000Z",
+          updatedAt: "2025-01-01T00:00:00.000Z",
+          id: "mock-user-id",
+        },
+      }),
+    });
+  });
+}
+
+export async function mockSignUpNetworkError(page: Page) {
+  await page.route("/api/auth/sign-up/email", (route) =>
+    route.abort("connectionrefused"),
+  );
+}
+
 export async function validateSignUpRequest(
   requestPromise: Promise<Request>,
   email: string,

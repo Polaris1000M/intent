@@ -20,6 +20,9 @@ export function getAuthErrorMessage(ctx: unknown): string {
       case "PASSWORD_TOO_SHORT":
         return "Your password is too short. Please choose a stronger password.";
 
+      case "VALIDATION_ERROR":
+        return "Please check your input and try again.";
+
       default: {
         const message = authError.message || "An authentication error occurred";
         return message.endsWith(".") ? message : `${message}.`;

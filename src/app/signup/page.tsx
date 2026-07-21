@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import { authClient } from "@/lib/auth-client";
 import Link from "next/link";
 import { ErrorContext } from "better-auth/react";
@@ -11,6 +12,8 @@ import { Toaster, toast } from "sonner";
 import { getAuthErrorMessage } from "@/lib/error-helpers";
 
 export default function SignUp() {
+  const [isLoading, setIsLoading] = useState(false);
+
   async function handleGitHub() {
     await authClient.signIn.social(
       {
@@ -44,24 +47,32 @@ export default function SignUp() {
   async function handleSubmit(e: React.SyntheticEvent<HTMLFormElement>) {
     e.preventDefault();
     const formData: FormData = new FormData(e.currentTarget);
+    setIsLoading(true);
 
-    await authClient.signUp.email(
-      {
-        email: String(formData.get("email")),
-        password: String(formData.get("password")),
-        name: String(formData.get("username")),
-        callbackURL: "/",
-      },
-      {
-        onSuccess: () => {
-          toast.success("Please verify your email.");
+    try {
+      await authClient.signUp.email(
+        {
+          email: String(formData.get("email")),
+          password: String(formData.get("password")),
+          name: String(formData.get("username")),
+          callbackURL: "/",
         },
-        onError: (ctx: ErrorContext) => {
-          toast.error(getAuthErrorMessage(ctx));
+        {
+          onSuccess: () => {
+            toast.success("Please verify your email.");
+          },
+          onError: (ctx: ErrorContext) => {
+            toast.error(getAuthErrorMessage(ctx));
+          },
         },
-      },
-    );
+      );
+    } catch (err) {
+      toast.error("Something went wrong. Please try again later.");
+    } finally {
+      setIsLoading(false);
+    }
   }
+
   return (
     <div className="flex flex-col min-h-dvh items-center justify-center px-8 py-4">
       <form
@@ -73,7 +84,9 @@ export default function SignUp() {
         <Input name="email" type="text" placeholder="Email" />
         <Input name="username" type="text" placeholder="Username" />
         <Input name="password" type="password" placeholder="Password" />
-        <Button type="submit">Sign Up</Button>
+        <Button type="submit" disabled={isLoading}>
+          Sign Up
+        </Button>
         <Marker variant="separator">Sign up with Socials</Marker>
         <Button type="button" onClick={handleGoogle} variant="outline">
           Sign up with Google

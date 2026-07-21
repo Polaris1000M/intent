@@ -12,6 +12,9 @@ Track habits and their analytics.
 - [x] Sync users across multiple login methods
 - [x] Style with shadcn/ui
 - [ ] E2E tests with Playwright
+    - [x] Sign up page
+    - [ ] Sign in page
+- [ ] Backend unit tests with Vitest
 
 ### Application
 - [ ] Add new sessions

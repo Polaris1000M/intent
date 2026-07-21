@@ -8,7 +8,7 @@ import { Input } from "@/components/ui/input";
 import { Marker } from "@/components/ui/marker";
 import { GitHubIcon, GoogleIcon } from "@/components/icons";
 import { Toaster, toast } from "sonner";
-import { getAuthErrorMessage } from "@/lib/auth-error";
+import { getAuthErrorMessage } from "@/lib/error-helpers";
 
 export default function SignIn() {
   async function handleGitHub() {

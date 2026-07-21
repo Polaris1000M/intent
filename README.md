@@ -24,6 +24,6 @@ Track habits and their analytics.
 
 ### Polishing
 - [ ] Style emails
-- [ ] Configure account linking
+- [ ] Configure and test account linking
 - [ ] Change Google OAuth user support email to contact@intent.ac
 - [ ] Add fancy landing page

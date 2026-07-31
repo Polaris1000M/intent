@@ -4,8 +4,9 @@
 - [x] CI/CD with GitHub Actions
 - [x] Vercel deployment
 - [x] CloudFlare DNS
-- [ ] Database configuration
-- [ ] shadcn/ui installation
+- [x] Database configuration
+- [x] shadcn/ui installation
+- [x] Typography configuration
 
 ## Authentication
 - [ ] Better Auth configuration

@@ -1,13 +1,16 @@
 # Plan
-## Scaffolding
+## Setup
 - [x] Testing setup
-- [ ] CI/CD with GitHub Actions
+- [x] CI/CD with GitHub Actions
 - [x] Vercel deployment
 - [x] CloudFlare DNS
 - [ ] Database configuration
 - [ ] shadcn/ui installation
 
 ## Authentication
+- [ ] OAuth API key configuration
+- [ ] Resend API key configuration
+- [ ] Resend email styling
 - [ ] Log in page
 - [ ] Sign up page
 

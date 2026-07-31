@@ -5,4 +5,4 @@
     - Added checks in Vercel deployment
 - [ ] Inter and Merriweather fonts unavailable for email
 - [ ] Better Auth conflicts with drizzle-kit
-    - Downgraded drizzle-kit to 0.31.10
+    - Installed Better Auth with force flag

@@ -16,3 +16,6 @@ GitHub Actions.
 
 ## Authentication
 Better Auth and Resend. Sign in with email and password or through socials with OAuth.
+
+## DNS
+Porkbun registrar, Cloudflare proxies, Vercel deployment.

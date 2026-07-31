@@ -5,7 +5,7 @@
 - [x] Vercel deployment
 - [x] CloudFlare DNS
 - [x] Database configuration
-- [x] shadcn/ui installation
+- [x] shadcn installation
 - [x] Typography configuration
 
 ## Authentication

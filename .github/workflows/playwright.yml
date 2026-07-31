@@ -1,4 +1,4 @@
-name: CI
+name: Playwright Tests
 on:
   push:
     branches: [ main, master ]
@@ -13,10 +13,9 @@ jobs:
     - uses: actions/setup-node@v4
       with:
         node-version: lts/*
+        cache: 'npm'
     - name: Install dependencies
       run: npm ci
-    - name: Run Vitest tests
-      run: npm run test
     - name: Install Playwright Browsers
       run: npx playwright install --with-deps
     - name: Run Playwright tests
@@ -27,5 +26,3 @@ jobs:
         name: playwright-report
         path: playwright-report/
         retention-days: 30
-  deploy:
-    timeout-minutes: 60

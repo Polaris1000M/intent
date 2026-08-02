@@ -9,7 +9,7 @@ jobs:
     timeout-minutes: 15
     runs-on: ubuntu-latest
     env:
-      DATABASE_URL: postgresql://postgres@localhost:5432/intent
+      DATABASE_URL: postgresql://postgres:postgres@localhost:5432/intent
     services:
       postgres:
         image: postgres

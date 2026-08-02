@@ -9,7 +9,7 @@
 - [x] Typography configuration
 
 ## Authentication
-- [ ] Better Auth configuration
+- [x] Better Auth configuration
 - [ ] OAuth API key configuration
 - [ ] Resend API key configuration
 - [ ] Resend email styling

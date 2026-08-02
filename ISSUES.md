@@ -5,3 +5,5 @@
     - Added checks in Vercel deployment
 - [x] Better Auth conflicts with drizzle-kit
     - Used `npm pkg set dependencies.drizzle-orm=0.45.2` and `npm pkg set devDependencies.drizzle-kit=^0.31.9` to specify specific package versions
+- [ ] Using `npx drizzle-kit migrate` in GitHub Actions workflows stalled indefinitely
+    - Created `migrate.ts` script and executed it in GitHub Actions instead

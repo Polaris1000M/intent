@@ -10,8 +10,9 @@ jobs:
     runs-on: ubuntu-latest
     env:
       DATABASE_URL: postgresql://postgres:postgres@localhost:5432/intent
-      BETTER_AUTH_SECRET: better-auth-test-secret
+      BETTER_AUTH_SECRET: test_better_auth_secret
       BETTER_AUTH_URL: http://localhost:3000
+      RESEND_API_KEY: test_resend_api_key
     services:
       postgres:
         image: postgres

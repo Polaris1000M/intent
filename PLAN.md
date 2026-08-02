@@ -13,7 +13,9 @@
 - [ ] OAuth API key configuration
 - [ ] Resend API key configuration
 - [ ] Resend email styling
+- [ ] Log in testing
 - [ ] Log in page
+- [ ] Sign up testing
 - [ ] Sign up page
 
 ## Landing

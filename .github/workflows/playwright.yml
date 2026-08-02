@@ -8,6 +8,10 @@ jobs:
   playwright-tests:
     timeout-minutes: 60
     runs-on: ubuntu-latest
+    env:
+      DATABASE_URL: postgresql://postgres@localhost:5432/intent
+      BETTER_AUTH_SECRET: better-auth-test-secret
+      BETTER_AUTH_URL: http://localhost:3000
     services:
       postgres:
         image: postgres
@@ -29,16 +33,10 @@ jobs:
       run: npm run build
     - name: Migrate database
       run: npx drizzle-kit migrate
-      env:
-        DATABASE_URL: ${{ secrets.DATABASE_URL }}
     - name: Install Playwright Browsers
       run: npx playwright install --with-deps
     - name: Run Playwright tests
       run: npx playwright test
-      env:
-        DATABASE_URL: ${{ secrets.DATABASE_URL }}
-        BETTER_AUTH_SECRET: ${{ secrets.BETTER_AUTH_SECRET }}
-        BETTER_AUTH_URL: ${{ secrets.BETTER_AUTH_URL }}
     - uses: actions/upload-artifact@v4
       if: ${{ !cancelled() }}
       with:

@@ -9,7 +9,7 @@ jobs:
     timeout-minutes: 60
     runs-on: ubuntu-latest
     env:
-      DATABASE_URL: postgresql://postgres:postgres@localhost:5432/intent
+      DATABASE_URL: postgresql://postgres@localhost:5432/intent
       BETTER_AUTH_SECRET: better-auth-test-secret
       BETTER_AUTH_URL: http://localhost:3000
     services:

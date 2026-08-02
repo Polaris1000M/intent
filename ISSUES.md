@@ -7,3 +7,5 @@
     - Used `npm pkg set dependencies.drizzle-orm=0.45.2` and `npm pkg set devDependencies.drizzle-kit=^0.31.9` to specify specific package versions
 - [x] Using `npx drizzle-kit migrate` in GitHub Actions workflows stalled indefinitely
     - Created `migrate.ts` script and executed it in GitHub Actions instead
+- [x] Google OAuth requires user support email with Google email
+    - Created a Google Group called intent-support@googlegroups.com

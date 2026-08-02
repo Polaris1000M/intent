@@ -10,18 +10,21 @@
 
 ## Authentication
 - [x] Better Auth configuration
-- [ ] OAuth API key configuration
-- [ ] Resend API key configuration
-- [ ] Resend email styling
+- [x] OAuth client configuration
+- [x] CloudFlare email configuration
+- [x] Resend configuration
 - [ ] Log in testing
 - [ ] Log in page
 - [ ] Sign up testing
 - [ ] Sign up page
 
 ## Landing
-- [ ] Database configuration
+- [ ] Schema creation and database configuration
+- [ ] Goal testing
 - [ ] Goal section
+- [ ] Habit testing
 - [ ] Habits section
+- [ ] Check-in testing
 - [ ] Check-in section
 
 ## Analytics

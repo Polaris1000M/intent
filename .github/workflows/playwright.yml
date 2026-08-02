@@ -9,7 +9,7 @@ jobs:
     timeout-minutes: 60
     runs-on: ubuntu-latest
     env:
-      DATABASE_URL: postgresql://postgres@localhost:5432/intent
+      DATABASE_URL: postgresql://postgres:postgres@localhost:5432/intent
       BETTER_AUTH_SECRET: better-auth-test-secret
       BETTER_AUTH_URL: http://localhost:3000
     services:
@@ -21,6 +21,11 @@ jobs:
           POSTGRES_DB: intent
         ports:
           - 5432:5432
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
     steps:
     - uses: actions/checkout@v4
     - uses: actions/setup-node@v4

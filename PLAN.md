@@ -13,9 +13,9 @@
 - [x] OAuth client configuration
 - [x] CloudFlare email configuration
 - [x] Resend configuration
-- [ ] Log in testing
-- [ ] Log in page
+- [ ] Sign in testing
 - [ ] Sign up testing
+- [ ] Sign in page
 - [ ] Sign up page
 
 ## Landing
